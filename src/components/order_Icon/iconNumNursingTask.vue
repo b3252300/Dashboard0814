@@ -1,0 +1,58 @@
+<template>
+<div class="icon_style" v-if="iconApi != 0">
+  <div v-if="iconApi > 1" class="num">{{ iconApi }}</div>
+    <div class="icon_circle bg_green">
+    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.7577 9.42577C11.9387 9.12549 12.2636 8.94189 12.6142 8.94189H21.8645C22.2102 8.94189 22.5314 9.12044 22.7139 9.41405L26.2528 15.1084C26.5571 15.5981 26.3855 16.2429 25.8781 16.5165L17.6653 20.9444C17.3658 21.1059 17.0048 21.104 16.7071 20.9395L8.6978 16.5139C8.20153 16.2397 8.03228 15.6081 8.32492 15.1225L11.7577 9.42577Z" fill="#F0F0F0"/>
+    <path d="M27.7856 12.5461C18.1828 15.3463 10.2136 14.0616 6.44828 12.7441C6.02363 12.5956 5.58649 13.0214 5.74935 13.4408L8.9798 21.7595C9.03193 21.8937 9.13931 21.9993 9.2752 22.0469C15.452 24.2103 22.7513 23.004 25.916 22.0523C26.0811 22.0027 26.2053 21.8692 26.2478 21.7021L28.4241 13.1549C28.5208 12.7753 28.1616 12.4364 27.7856 12.5461Z" fill="white"/>
+    <rect x="14.4277" y="17.772" width="6.25467" height="2.04164" fill="#CE0016"/>
+    <rect x="16.5332" y="21.9199" width="6.25467" height="2.04164" transform="rotate(-90 16.5332 21.9199)" fill="#CE0016"/>
+    </svg>
+  </div>
+</div>
+
+</template>
+
+<script setup>
+
+defineProps({
+  iconApi: Number,
+
+});
+
+</script>
+<style lang="scss" scoped>
+.num {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(65%, -42%);
+    background: #fff;
+    border: solid #000 thin;
+    display: block;
+    border-radius:1.87rem;
+    font-size: 0.62rem;
+    width:1.125rem;
+    height: 0.81rem;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon_style{
+  position: relative;
+}
+.icon_circle {
+
+    border-radius: 100%;
+//background: linear-gradient(135deg,  #22c555 4%,#29ac52 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+svg{
+    width: 1.5rem;
+    height: auto;
+}
+
+}
+</style>

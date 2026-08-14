@@ -1,0 +1,210 @@
+@mixin order-bg-green(){
+    background: linear-gradient(135deg,  #22c555 4%,#29ac52 100%);
+  }
+@mixin order-bg-red(){
+    background: linear-gradient(135deg,  #FD6F6F 4%,#F54A4A 100%);
+  }
+@mixin order-bg-grey(){
+    background: linear-gradient(135deg,  #475467 4%,#667085 100%);
+} 
+
+@mixin scrollbar(){
+  //firefox
+  scrollbar-color: #C1C1C1;
+  scrollbar-width: thin;
+
+ //chrome
+  &::-webkit-scrollbar-track{
+	 
+    border-radius: 8px;
+    background-color: transparent;
+
+  }
+
+  &::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: transparent;
+
+  }
+  
+  &::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #C1C1C1;
+    position: absolute;
+    left: 0;
+  }
+}
+
+@mixin ghost(){
+  background: #fff;
+  border: solid #D0D5DD thin;
+  border-radius:$btn_radius_s;
+  color:$btn-outline;
+  font-weight: 600;
+  &:hover, &:focus{
+    background: #F7F7F7;
+    border-color: #D0D5DD;
+    >svg {
+      
+      path{
+        fill:$btn-outline;
+      }
+    }
+  }
+  &:selected{
+    color: $btn-outline;
+    background: #F7F7F7;
+    border-color: #D0D5DD;
+    >svg {    
+      path{
+        fill:$btn-outline;
+      }
+    }
+
+  }
+  &:checked + .btn, :not(.btn-check) + &:active, &:first-child:active, &.active, &.show{
+    background: #F7F7F7;
+    border-color: #D0D5DD;
+  
+  }
+  &.disabled, &:disabled{
+    background: #fff;
+    border-color: #D0D5DD;
+    color: #C8C8C8;
+  }
+}
+
+@mixin primary(){
+  color: #fff;
+  background-color: #25C269;
+  font-size: 1rem;
+  &:hover, &:focus{
+    background-color: #1DA254;
+    color: #fff;
+    border-color: #1DA254;
+  }
+  &:selected{
+    color: $btn-outline;
+    background: #1DA254;
+    border-color: #1DA254;
+    >svg {    
+      path{
+        fill:#fff;
+      }
+    }
+
+  }
+  &:checked + .btn, :not(.btn-check) + &:active, &:first-child:active, &.active, &.show{
+    color: #fff;
+    background-color: #1DA254;
+    border-color: #1DA254;
+  }         
+  &.disabled, &:disabled{
+    color: #4DDB8A;
+    background-color: #BBF3D3;
+    border-color: #BBF3D3;
+  }
+}
+@mixin secondary(){
+  background-color: #28BEED;
+  color: #FFFFFF;
+  border: solid #28BEED thin; 
+  &:hover, &:focus{
+    background-color: #13B6E9;
+    color: #fff;
+    border-color: #13B6E9;
+  }
+  &:checked + .btn, :not(.btn-check) + &:active, &:first-child:active, &.active, &.show{
+    color: #fff;
+    background-color: #13B6E9;
+    border-color: #13B6E9;
+  } 
+  &.disabled, &:disabled{
+    color: #5ECFF2;
+    background-color: #ADE7F9;
+    border-color: #ADE7F9;
+  }
+}
+
+@mixin outline-ghost(){
+  background: #fff;
+  color: $btn-outline;
+  border-color:#D0D5DD;
+  >svg {
+    path{
+      fill:$btn-outline;
+    }
+  }
+ 
+   &:checked + .btn, :not(.btn-check) + &:active, &:first-child:active, &.active, &.show{
+    background: $btn-outline-bg-secondary-hover;
+    border-color: $bs-btn-hover-color;
+     color:$bs-btn-hover-color;
+     >svg {      
+      path{
+        fill:$bs-btn-hover-color;
+      }
+      
+    }
+   }
+  &:hover, &:focus{
+    background: #fff;
+    color: $btn-outline;
+    border-color:#D0D5DD;
+    svg path{
+      fill:$btn-outline;
+    }
+
+  }
+  &.disabled, &:disabled{
+    background: #fff;
+    border-color: #D0D5DD;
+    color: #C8C8C8;
+  }
+
+}
+
+$btn_danger:#EF4444;
+$btn_radius_s:0.18rem;//3px
+$border_radius_s:0.31rem;//5px
+$border_radius_m:0.625rem;//10px
+$table_radius_s:0.62rem;
+
+
+$bg_warn:#FF0000;
+$bs-form-invalid-border-color:#DC2626;
+$bs-table-color:#475467;
+$bs-table-color2:#F2F4F7;
+$bs-table-color2-text:#667085;
+$bg_jade:#489F6E;
+$bg_flatred:#E66060;
+$bg_yellowed:#E5B714;
+
+$bs-btn-hover-color:#1DA254;
+// $bs-btn-hover-border-color:#1DA254;
+// $bs-btn-active-color:#1DA254;
+// $bs-btn-active-border-color:#1DA254;
+$btn-outline-secondary-hover:#4DDB8A;
+$btn-outline-bg-secondary-hover:#F0FCF5;
+// $btn-outline-secondary-active:#1DA254;
+
+$btn-outline-hover:#4ADE78;
+$btn-outline:#344054;
+
+
+$bg_Occupied:#D0D5DD;
+$bg_Occupied_hover:#98A2B3;
+
+$bg_Available:#BBF3D3;
+$bg_Available_hover:#25C269;
+
+$bg_Discharging:#D9D6FE;
+$bg_Discharging_hover:#9B8AFB;
+
+$bg_Housekeeping:#FEE28A;
+$bg_Housekeeping_hover:#EAB308;
+
+$bg_Blocked:#FECACA;
+$bg_Blocked_hover:#EF4444;
