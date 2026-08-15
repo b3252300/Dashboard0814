@@ -9,10 +9,9 @@ export default function useApi() {
     if (import.meta.env.VITE_READ_LOCAL_CONFIG == "true") {
       apiRootUrl = inject("apiRootUrl");
       if (apiRootUrl == undefined || apiRootUrl == "" || apiRootUrl == "undefined") {
-        var configPath = import.meta.env.VITE_WEB_PATH + "appsettings.json";
-        if (process.env.NODE_ENV == "development") {
-          configPath = import.meta.env.VITE_WEB_PATH + "appsettings.json";
-        }
+        var basePath = import.meta.env.BASE_URL || './';
+        if (!basePath.endsWith('/')) basePath += '/';
+        var configPath = basePath + "appsettings.json";
 
         const response = await fetch(configPath);
         const config = await response.json();

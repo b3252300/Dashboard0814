@@ -166,10 +166,9 @@ async function getSignalrBaseUrl() {
       signalrUrl == "" ||
       signalrUrl == "undefined"
     ) {
-      var configPath = import.meta.env.VITE_WEB_PATH + "appsettings.json";
-      if (process.env.NODE_ENV == "development") {
-        configPath = import.meta.env.VITE_WEB_PATH + "appsettings.json";
-      }
+      var basePath = import.meta.env.BASE_URL || './';
+      if (!basePath.endsWith('/')) basePath += '/';
+      var configPath = basePath + "appsettings.json";
 
       const response = await fetch(configPath);
       const config = await response.json();
