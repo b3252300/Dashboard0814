@@ -22,6 +22,7 @@
     "datatables.net-vue3": "^3.0.1",
     "element-plus": "^2.7.1",
     "encrypt-storage": "^2.12.22",
+    "gh-pages": "^6.3.0",
     "jquery": "^3.7.1",
     "mockjs": "^1.1.0",
     "pinia": "^2.1.7",
