@@ -1,11 +1,13 @@
 {
-  "name": "vue-project",
+  "name": "Dashboard0814",
+  "homepage": "https://b3252300.github.io/Dashboard0814",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --port 3002",
-    "build": "vite build",
+    "build": "rm -rf dist && vite build",
+    "deploy": "npm run build && gh-pages -d dist",
     "preview": "vite preview",
     "test:unit": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"

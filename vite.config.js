@@ -32,6 +32,7 @@ export default defineConfig(({ mode }) => {
     },
 
     build: {
+      emptyOutDir: false,
       chunkSizeWarningLimit: 5000,
       minify: "terser",
       terserOptions: {
