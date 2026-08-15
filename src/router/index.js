@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import createRouteGuard from "./guard";
 
 import HomeView from '../views/HomeView.vue'
@@ -23,7 +23,7 @@ import LoginLayout from '../layout/LoginLayout.vue';
 import DashboardView from '@/views/DashboardView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
 
     {
@@ -31,14 +31,14 @@ const router = createRouter({
       name: 'layout',
       component: RWD,
       redirect: '/home',
-      children: [        
+      children: [
         {
           path: '/:pathMatch(.*)',
           redirect: '/404',
           meta: {
             title: '404',
             hidden: true,
-            requireAuth: false 
+            requireAuth: false
           }
         },
         {
@@ -151,7 +151,7 @@ const router = createRouter({
         }
       ]
     },
-    
+
   ]
 })
 
